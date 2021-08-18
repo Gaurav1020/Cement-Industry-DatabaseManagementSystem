@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8434D18A-3C9E-42D4-A6C1-0A563F64C2E4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DBMS</RootNamespace>
+    <AssemblyName>DBMS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\DELL\source\repos\DBMS\Setup\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0168</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A806CA453F7ED3AD17F1E0ED759B59CACCD2A89C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DBMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d" />
+    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySqlConnector, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.1.0.1\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.0\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="About_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>About_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cement_industryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cement_industryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CF_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CF_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>CF_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CP_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CP_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>CP_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CP_View_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CP_View_Usercontrol.Designer.cs">
+      <DependentUpon>CP_View_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="C_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>C_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_View_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="C_View_Usercontrol.Designer.cs">
+      <DependentUpon>C_View_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Departments_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Departments_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>Departments_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dept_View_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dept_View_Usercontrol.Designer.cs">
+      <DependentUpon>Dept_View_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECD_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECD_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>ECD_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_View_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employee_View_Usercontrol.Designer.cs">
+      <DependentUpon>Employee_View_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EOP_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EOP_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>EOP_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EPD_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EPD_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>EPD_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIN.Designer.cs">
+      <DependentUpon>LogIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditWindow.Designer.cs">
+      <DependentUpon>EditWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistics_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Logistics_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>Logistics_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L_View_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="L_View_Usercontrol.Designer.cs">
+      <DependentUpon>L_View_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Machinery_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Machinery_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>Machinery_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mach_View_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mach_View_Usercontrol.Designer.cs">
+      <DependentUpon>Mach_View_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MC_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MC_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>MC_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MGP_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MGP_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>MGP_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MGP_View_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MGP_View_Usercontrol.Designer.cs">
+      <DependentUpon>MGP_View_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Project.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Project_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>Project_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_View_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Project_View_Usercontrol.Designer.cs">
+      <DependentUpon>Project_View_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RMC_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RMC_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>RMC_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RM_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RM_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>RM_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RM_View_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RM_View_Usercontrol.Designer.cs">
+      <DependentUpon>RM_View_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SL_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SL_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>SL_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Supplier_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>Supplier_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supp_View_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Supp_View_Usercontrol.Designer.cs">
+      <DependentUpon>Supp_View_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TD_Edit_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TD_Edit_Usercontrol.Designer.cs">
+      <DependentUpon>TD_Edit_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TD_View_Usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TD_View_Usercontrol.Designer.cs">
+      <DependentUpon>TD_View_Usercontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewOrEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewOrEdit.Designer.cs">
+      <DependentUpon>ViewOrEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewWindow.Designer.cs">
+      <DependentUpon>ViewWindow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="About_Edit_Usercontrol.resx">
+      <DependentUpon>About_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CF_Edit_Usercontrol.resx">
+      <DependentUpon>CF_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CP_Edit_Usercontrol.resx">
+      <DependentUpon>CP_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CP_View_Usercontrol.resx">
+      <DependentUpon>CP_View_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Edit_Usercontrol.resx">
+      <DependentUpon>C_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_View_Usercontrol.resx">
+      <DependentUpon>C_View_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Departments_Edit_Usercontrol.resx">
+      <DependentUpon>Departments_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dept_View_Usercontrol.resx">
+      <DependentUpon>Dept_View_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECD_Edit_Usercontrol.resx">
+      <DependentUpon>ECD_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee_View_Usercontrol.resx">
+      <DependentUpon>Employee_View_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EOP_Edit_Usercontrol.resx">
+      <DependentUpon>EOP_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EPD_Edit_Usercontrol.resx">
+      <DependentUpon>EPD_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIN.resx">
+      <DependentUpon>LogIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditWindow.resx">
+      <DependentUpon>EditWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistics_Edit_Usercontrol.resx">
+      <DependentUpon>Logistics_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L_View_Usercontrol.resx">
+      <DependentUpon>L_View_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Machinery_Edit_Usercontrol.resx">
+      <DependentUpon>Machinery_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mach_View_Usercontrol.resx">
+      <DependentUpon>Mach_View_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MC_Edit_Usercontrol.resx">
+      <DependentUpon>MC_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MGP_Edit_Usercontrol.resx">
+      <DependentUpon>MGP_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MGP_View_Usercontrol.resx">
+      <DependentUpon>MGP_View_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Edit_Usercontrol.resx">
+      <DependentUpon>Project_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_View_Usercontrol.resx">
+      <DependentUpon>Project_View_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RMC_Edit_Usercontrol.resx">
+      <DependentUpon>RMC_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RM_Edit_Usercontrol.resx">
+      <DependentUpon>RM_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RM_View_Usercontrol.resx">
+      <DependentUpon>RM_View_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SL_Edit_Usercontrol.resx">
+      <DependentUpon>SL_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier_Edit_Usercontrol.resx">
+      <DependentUpon>Supplier_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supp_View_Usercontrol.resx">
+      <DependentUpon>Supp_View_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TD_Edit_Usercontrol.resx">
+      <DependentUpon>TD_Edit_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TD_View_Usercontrol.resx">
+      <DependentUpon>TD_View_Usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewOrEdit.resx">
+      <DependentUpon>ViewOrEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewWindow.resx">
+      <DependentUpon>ViewWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="cement_industryDataSet.xsc">
+      <DependentUpon>cement_industryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="cement_industryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cement_industryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cement_industryDataSet.xss">
+      <DependentUpon>cement_industryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBMS_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Project.xsc">
+      <DependentUpon>Project.xsd</DependentUpon>
+    </None>
+    <None Include="Project.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Project.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Project.xss">
+      <DependentUpon>Project.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_return_925910.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View Edit BG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View Edit BG1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abstract-1780386_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button img.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frame-1691211_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\construction-4794329_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_icons_exit2_1564506.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_reload_15542.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_basket_1814090.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_ic_system_update_tv_48px_352158.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_More_372914.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network-dark-bg-flipped.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_icons_delete_1564502.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_Close_1891023.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yog-joshi-closeup1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picturetopeople.org-bc5ec34f508b5ed230e978fa906ac96d3be9d4c68ee114cca7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picturetopeople.org-3acfd6a79f687038b8241e1e71842ddc6b77ee8ea71fc1ccda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picturetopeople.org-a1e5131b532fdc1bee0d29008a8fa5712f1c70f6d7061f17f8.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
