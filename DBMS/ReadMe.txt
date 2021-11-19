@@ -11,3 +11,4 @@ of the three phases along with all the other mentioned and asked details about t
 The LogIN username and password of the application is 
 Username- Gaurav
 Password- 19BCE2119 
+Hardcoded because of issues of MySQL client on my computer.
